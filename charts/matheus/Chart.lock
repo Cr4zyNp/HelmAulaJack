@@ -1,0 +1,6 @@
+dependencies:
+- name: grafana
+  repository: file://../grafana
+  version: 6.21.7
+digest: sha256:555f9aae9bbb88f82d75100ce99af5bacfcbeca042021334f4fe7232e585df00
+generated: "2022-02-17T20:01:55.531579-03:00"
