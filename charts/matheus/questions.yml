@@ -37,4 +37,30 @@ questions:
       default: "1Gi"
       description: "Aplicativo Persistent Volume Size"
       type: string
-      label: Aplicativo Volume Size          
+      label: Aplicativo Volume Size
+- variable: ingress.enabled
+  default: false
+  description: "Expose app using Layer 7 Load Balancer - ingress"
+  type: boolean
+  label: Expose app using Layer 7 Load Balancer
+  show_subquestion_if: true
+  group: "Load Balancing"
+  subquestions:
+  - variable: ingress.hosts[0].host
+    default: "matheus.turmalinda.jacexperts.io"
+    description: "Hostname to your Nginx installation"
+    type: hostname
+    required: true
+    label: Hostname
+  - variable: ingress.hosts[0].paths[0].path
+    default: "/"
+    description: "Path to your Nginx installation"
+    type: string
+    required: true
+    label: Path
+  - variable: ingress.hosts[0].paths[0].pathType
+    default: "ImplementationSpecific"
+    description: "Path type to your Nginx installation"
+    type: string
+    required: true
+    label: Path Type
