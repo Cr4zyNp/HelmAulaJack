@@ -95,7 +95,7 @@ volumes:
       claimName: volume
 
 volumeMounts:  
-  - mounthPath: 
+  - mounthPath: /home/matheus
     name: volume
 
 autoscaling:
