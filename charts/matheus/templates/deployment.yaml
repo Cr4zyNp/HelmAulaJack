@@ -47,13 +47,13 @@ spec:
           {{- end }}                      
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          {{- if .Values.persistence.enable }}
+          {{- if .Values.persistence.enabled }}
           {{- with .Values.volumeMounts}}
           volumeMount:
             {{- toYaml . | nindent 12 }}  
           {{- end}}  
           {{- end}}
-      {{- if .Values.persistence.enable }}
+      {{- if .Values.persistence.enabled }}
       {{- with .Values.volumes}}
       volumes:
         {{- toYaml . | nindent 8 }}  
