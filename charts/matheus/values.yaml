@@ -7,6 +7,16 @@ grafana:
   adminUser: matheus
   adminPassword: password
 
+livenessProbe:
+  httpGet:
+    path: /
+    port: http
+
+readinessProbe:
+  httpGet:
+    path: /
+    port: http
+
 replicaCount: 1
 
 image:
@@ -44,6 +54,7 @@ securityContext: {}
 service:
   type: ClusterIP
   port: 80
+  targetPort: 80
 
 ingress:
   enabled: false
@@ -72,6 +83,20 @@ resources: {}
   # requests:
   #   cpu: 100m
   #   memory: 128Mi
+
+persistence:
+  enabled: false
+  size: 1Gi
+  name: volume
+
+volumes:
+  - name: volume
+    persistentVolumeClaim: 
+      claimName: volume
+
+volumeMounts:  
+  - mounthPath: 
+    name: volume
 
 autoscaling:
   enabled: false
