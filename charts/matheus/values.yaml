@@ -85,7 +85,7 @@ resources: {}
   #   memory: 128Mi
 
 persistence:
-  enabled: enable
+  enabled: true
   size: 1Gi
   name: volume
 
