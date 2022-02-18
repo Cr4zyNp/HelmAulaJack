@@ -1,0 +1,40 @@
+rancher_max_version: 2.6.2
+labels:
+  io.cattle.role: cluster # options are cluster/project
+categories:
+- Application
+questions:
+- variable: grafana.enabled
+  default: false
+  description: "Utilizar Grafana"
+  label: Use Default Image
+  type: boolean
+  show_subquestion_if: true
+  group: "Grafana Settings"
+  subquestions:
+  - variable: adminUser
+    default: "matheus"
+    description: "User of the application Grafana"
+    type: string
+    required: true
+    label: Grafana Admin User
+    group: "Grafana Settings"
+  - variable: adminPassword
+    default: ""
+    description: "password will be auto-generated if not specified"
+    type: password
+    label: Grafana Password
+    group: "Grafana Settings"
+- variable: persistence.enabled
+  default: false
+  description: "Utilizar Persistencia"
+  label: Utilizar Persistencia
+  type: boolean
+  show_subquestion_if: true
+  group: "Persistencia Settings"
+  subquestions:
+    - variable: persistence.size
+      default: "1Gi"
+      description: "Aplicativo Persistent Volume Size"
+      type: string
+      label: Aplicativo Volume Size          
