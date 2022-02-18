@@ -49,7 +49,7 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- if .Values.persistence.enabled }}
           {{- with .Values.volumeMounts}}
-          volumeMount:
+          volumeMounts:
             {{- toYaml . | nindent 12 }}  
           {{- end}}  
           {{- end}}
