@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: rishikoy/theiaide-full:1.0.0-SNAPSHOT
+  repository: rishikoy/theiaide-full
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "theia-matheus"
+  tag: "1.0.0-SNAPSHOT"
 
 imagePullSecrets: []
 nameOverride: ""
