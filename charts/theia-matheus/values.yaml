@@ -97,5 +97,5 @@ volumes:
       claimName: theia-ide-matheus-pvc
 
 volumeMounts:  
-  - mountPath: /home/matheus
+  - mountPath: /home/project
     name: volume-theia    
