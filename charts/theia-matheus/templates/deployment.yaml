@@ -12,7 +12,7 @@ spec:
     matchLabels:
       {{- include "theia-matheus.selectorLabels" . | nindent 6 }}      
   strategy:
-    type: {{- .Values.}}      
+    type: {{- .Values.type}}      
   template:
     metadata:
       {{- with .Values.podAnnotations }}
