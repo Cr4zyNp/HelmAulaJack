@@ -87,9 +87,9 @@ spec:
     type: Recreate   
 
 persistence:
-  enabled: false
+  enabled: true
   size: 1Gi
-  name: volume
+  name: theia-ide-matheus-pvc
 
 volumes:
   - name: volume-theia
